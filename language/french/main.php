@@ -9,12 +9,9 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright	The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright           XOOPS Project (https://xoops.org)
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
- * @package	Cssholmes
- * @since		2.3.0
- * @author 	kris <http://www.xoofoo.org>
- * @version	$Id: main.php 794 2012-08-06 21:08:50Z kris_fr $
-**/
-
-?>
+ * @package             Cssholmes
+ * @since               2.3.0
+ * @author              kris <http://www.xoofoo.org>
+ **/

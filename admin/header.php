@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cssholmes module
  *
@@ -9,36 +10,32 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright	The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright           XOOPS Project (https://xoops.org)
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
- * @package	Cssholmes
- * @since		2.3.0
- * @author 	kris <http://www.xoofoo.org>
- * @version	$Id: header.php 794 2012-08-06 21:08:50Z kris_fr $
-**/
+ * @package             Cssholmes
+ * @since               2.3.0
+ * @author              kris <http://www.xoofoo.org>
+ **/
+require_once dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
+$myts = \MyTextSanitizer::getInstance();
 
-include "../../../include/cp_header.php";
-$myts =& MyTextSanitizer::getInstance();
-
-if ( $xoopsUser ) {
-    $xoopsModule = XoopsModule::getByDirname( "cssholmes");
-    if ( !$xoopsUser->isAdmin($xoopsModule->mid()) ) {
-        redirect_header(XOOPS_URL."/",3,_NOPERM);
-        exit();
+if ($xoopsUser) {
+    $xoopsModule = XoopsModule::getByDirname('cssholmes');
+    if (!$xoopsUser->isAdmin($xoopsModule->mid())) {
+        redirect_header(XOOPS_URL . '/', 3, _NOPERM);
     }
 } else {
-    redirect_header(XOOPS_URL."/",3,_NOPERM);
-    exit();
+    redirect_header(XOOPS_URL . '/', 3, _NOPERM);
 }
 
-require_once XOOPS_ROOT_PATH . "/class/template.php";
+require_once XOOPS_ROOT_PATH . '/class/template.php';
 
-if (!isset($xoopsTpl)) {$xoopsTpl = new XoopsTpl();}
-$xoopsTpl->xoops_setCaching(0);
+if (!isset($xoopsTpl)) {
+    $xoopsTpl = new \XoopsTpl();
+}
+$xoopsTpl->caching = 0;
 
 xoops_cp_header();
 
 // Define Stylesheet and JScript
-$xoTheme->addStylesheet( XOOPS_URL . "/modules/" . $xoopsModule->getVar("dirname") . "/css/admin.css" );
-
-?>
+$xoTheme->addStylesheet(XOOPS_URL . '/modules/' . $xoopsModule->getVar('dirname') . '/assets/css/admin.css');
